@@ -1,4 +1,4 @@
-# User Authentication
+# NodeJs User Authentication
 #Node authentication
 
 ## install dependencies
@@ -6,7 +6,7 @@ $npm install
 
 ## Author
 
-👤 **Chimobi Mbah A.K.A Mr-Chidex**
+👤 **Mr-Chidex**
 
 ## Show your support
 
