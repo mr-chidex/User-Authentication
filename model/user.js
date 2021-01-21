@@ -1,35 +1,57 @@
 const mongoose = require('mongoose');
 const bcryptJs = require('bcryptjs');
-
-const Schema = mongoose.Schema;
+const { Schema } = require("mongoose");
 
 const userSchema = new Schema({
-    email: {
+    method: {
         type: String,
-        lowercase: true,
-        required: true
+        required: true,
+        enum: ["facebook", "google", "local"]
     },
-    password: {
-        type: String,
-        required: true
+    local: {
+        email: {
+            type: String,
+            lowercase: true
+        },
+        password: {
+            type: String
+        },
+        firstname: { type: String },
+        lastname: { type: String },
     },
-    confirmPassword: {
-        type: String,
-        required: true
+    facebook: {
+        email: {
+            type: String,
+            lowercase: true,
+        },
+        firstname: { type: String, },
+        lastname: { type: String },
+        facebookId: { type: String }
+    },
+    google: {
+        email: {
+            type: String,
+            lowercase: true,
+        },
+        firstname: { type: String, },
+        lastname: { type: String },
+        googleId: { type: String }
+
     }
 });
 
 //hash password before saving to DB
 userSchema.pre('save', async function (next) {
     try {
+        if (this.method !== "local") return next();
+
         const salt = await bcryptJs.genSalt(12);
-        const hashedPassword = await bcryptJs.hash(this.password, salt);
-        this.password = hashedPassword;
-        this.confirmPassword = hashedPassword;
+        const hashedPassword = await bcryptJs.hash(this.local.password, salt);
+        this.local.password = hashedPassword;
         next();
     }
     catch (error) {
-        return next(error);
+        next(error);
     }
 });
 

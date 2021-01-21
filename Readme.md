@@ -1,15 +1,24 @@
-# NodeJs User Authentication
-#Node authentication
+# API_Authentication
 
-## install dependencies
-$npm install
+#Node_API Authentication
+
+- Local Authentication
+- FAcebook Authentication
+- Google Authentication
+- Authorization
+
+* You must be authorized to access the protected route
+
+```
+POST /api/signup
+POST /api/facebook
+POST /api/google
+POST /api/signin
+GET /api/secret
+```
 
 ## Author
 
 👤 **Mr-Chidex**
 
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
----
+- Github: [@mr-chidex](https://github.com/mr-chidex)

@@ -1,0 +1,16 @@
+{"level":"error","message":"confirmPassword is not defined"}
+{"level":"error","message":"Users validation failed: google.id: Path `google.id` is required., google.email: Path `google.email` is required., facebook.id: Path `facebook.id` is required., facebook.email: Path `facebook.email` is required."}
+{"level":"error","message":"Failed to fetch user profile"}
+{"level":"error","message":"Failed to fetch user profile"}
+{"level":"error","message":"Users validation failed: local.facebookId: Path `local.facebookId` is required., local.lastname: Path `local.lastname` is required., local.firstname: Path `local.firstname` is required."}
+{"level":"error","message":"Users validation failed: local.lastname: Path `local.lastname` is required., local.firstname: Path `local.firstname` is required."}
+{"level":"error","message":"newUser.save(...).select is not a function"}
+{"level":"error","message":"(intermediate value).select is not a function"}
+{"level":"error","message":"Failed to fetch user profile"}
+{"level":"error","message":"Users validation failed: local.lastname: Path `local.lastname` is required., local.firstname: Path `local.firstname` is required., local.password: Path `local.password` is required., local.email: Path `local.email` is required."}
+{"level":"error","message":"Unexpected token } in JSON at position 66"}
+{"level":"error","message":"Illegal arguments: string, undefined"}
+{"level":"error","message":"Illegal arguments: string, undefined"}
+{"level":"error","message":"Illegal arguments: string, undefined"}
+{"level":"error","message":"Illegal arguments: string, undefined"}
+{"level":"error","message":"Illegal arguments: string, undefined"}

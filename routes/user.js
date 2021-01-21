@@ -1,16 +1,22 @@
 const expressPromise = require('express-promise-router');
-const userController = require('../controllers/user');
+const { signIn, signUp, secret } = require('../controllers/user');
 const router = expressPromise();
 const passport = require('passport');
 const strategy = require('../validator/passport');
 
-router.route('/signup')
-    .post(userController.signUp);
+router.route('/api/signup')
+    .post(signUp);
 
-router.route('/signin')
-    .post(passport.authenticate('local', {session: false}) ,userController.signIn);
+router.route('/api/signin')
+    .post(passport.authenticate('local', { session: false }), signIn);
 
-router.route('/secret')
-    .get(passport.authenticate('jwt', {session: false}) ,userController.secret);
+router.route('/api/facebook')
+    .post(passport.authenticate('facebookToken', { session: false }), signIn);
+
+router.route('/api/google')
+    .post(passport.authenticate('googleToken', { session: false }), signIn);
+
+router.route('/api/secret')
+    .get(passport.authenticate('jwt', { session: false }), secret);
 
 module.exports = router; 
